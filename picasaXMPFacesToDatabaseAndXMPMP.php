@@ -143,7 +143,7 @@ class DatabaseHandler {
 				$this->oDBH->exec('PRAGMA case_sensitive_like=1');
 				$this->oDBH->exec('PRAGMA foreign_keys=ON');
 			} else {
-				$this->oDBH = new PDO('pgsql:dbname=photo', 'admin', '', array(PDO::ATTR_PERSISTENT => false, PDO::ATTR_EMULATE_PREPARES => true));
+				$this->oDBH = new PDO('pgsql:dbname=photo', 'postgres', '', array(PDO::ATTR_PERSISTENT => false, PDO::ATTR_EMULATE_PREPARES => true));
 			}
 		} catch(\PDOException $e) {
 			throw new \RuntimeException('No database!', 0);
